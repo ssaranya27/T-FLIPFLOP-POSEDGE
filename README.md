@@ -45,29 +45,28 @@ Check for Race Conditions: Ensure that there are no race conditions or undefined
 ```
 DEVELOPED BY:SARANYA S.
 REG NO:212223220101
-module Exp_09( input clk, rst_n, input t,
+module tflipflop( input clk, rst_n, input t,
 output reg q,
 output q_bar
 );
 always@(posedge clk) 
 begin 
-	if(!rst_n)
-		q <= 0;
-		else
-			if(t)
-				q <= ~q;
-			else
-				q <= q;
+if(!rst_n)
+q<=0;
+else 
+begin
+q<=(t?~q:q);
+end
 end
 assign q_bar = ~q;
 endmodule
 ```
 
 **RTL LOGIC FOR FLIPFLOPS**
-![Screenshot 2024-04-21 165454](https://github.com/afifa17112005/T-FLIPFLOP-POSEDGE/assets/147080931/3ae4ae65-9f45-4f2f-829e-a66cf88119a6)
-
+![image](https://github.com/kishore2109K/T-FLIPFLOP-POSEDGE/assets/152274619/53692c4c-9782-4c25-b9b5-83e9b83b92ff)
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
-![324218807-64752a62-b4bf-4796-bf1d-8044e5390e39](https://github.com/afifa17112005/T-FLIPFLOP-POSEDGE/assets/147080931/008ee001-9046-4085-bc46-
+![image](https://github.com/kishore2109K/T-FLIPFLOP-POSEDGE/assets/152274619/132c0f71-6d83-4004-87b5-d06b526d9143)
 **RESULTS**
+
  T flipflop using verilog and validating their functionality using their functional tables completed
